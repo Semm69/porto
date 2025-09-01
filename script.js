@@ -35,3 +35,32 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// ==========================
+// Popup galeri kenangan
+// ==========================
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popup-img");
+const captionText = document.getElementById("caption");
+const closeBtn = document.querySelector(".close");
+
+// Buka popup saat gambar diklik
+document.querySelectorAll(".gallery img").forEach(img => {
+    img.addEventListener("click", () => {
+        popup.style.display = "block";
+        popupImg.src = img.src;
+        captionText.innerHTML = img.alt;
+    });
+});
+
+// Tutup popup saat klik tombol X
+closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+});
+
+// Tutup popup saat klik area luar gambar
+window.addEventListener("click", (e) => {
+    if (e.target === popup) {
+        popup.style.display = "none";
+    }
+});
