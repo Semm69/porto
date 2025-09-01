@@ -10,9 +10,9 @@ body {
   background-color: #ffffff; /* putih */
   font-family: Arial, Helvetica, sans-serif;
   color: #333;
-  line-height: 1.8;            /* Jarak antar baris yang sudah disesuaikan */
-  scroll-behavior: smooth;    /* smooth scroll */
-  scroll-snap-type: y mandatory;  /* snap tiap section */
+  line-height: 1.8;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100%;
 }
@@ -30,7 +30,7 @@ header .profile-img {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 3rem; /* Jarak antara foto dan teks, sudah disesuaikan */
+  margin-bottom: 3rem;
   border: 3px solid #ddd;
 }
 
@@ -67,22 +67,43 @@ nav a:hover {
 
 /* Main Content */
 main {
-  max-width: 100%; /* biar full screen */
+  max-width: 100%;
   margin: 0 auto;
   padding: 0;
 }
 
 /* Section Styling */
 section {
-  height: 100vh; /* full satu layar */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 3rem;
   border-bottom: 2px solid #eaeaea;
-  scroll-snap-align: start; /* tiap scroll berhenti pas section */
+  scroll-snap-align: start;
   text-align: center;
+}
+
+/* Background berbeda tiap section */
+#tentang {
+  background: #e3f2fd; /* biru muda */
+}
+
+#pengalaman {
+  background: #e8cea6; /* oranye muda */
+}
+
+#proyek {
+  background: #9a9af1; /* pink muda */
+}
+
+#kenangan {
+  background: #d1edb0; /* hijau muda */
+}
+
+#kontak {
+  background: #ff859b; /* ungu muda */
 }
 
 section h2 {
@@ -156,15 +177,15 @@ section h2 {
 
 /* Warna ikon social media */
 .social-media a .fa-github {
-  color: #333; /* abu-abu */
+  color: #333;
 }
 
 .social-media a .fa-linkedin {
-  color: #0e76a8; /* biru */
+  color: #0e76a8;
 }
 
 .social-media a .fa-twitter {
-  color: #1da1f2; /* biru muda */
+  color: #1da1f2;
 }
 
 .social-media a .fa-instagram {
@@ -172,7 +193,6 @@ section h2 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 
 /* Styling untuk Bagian Kenangan */
 .gallery {
@@ -190,7 +210,7 @@ section h2 {
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  height: 250px; /* Tinggi item galeri tetap */
+  height: 250px;
 }
 
 .gallery-item:hover {
@@ -200,7 +220,7 @@ section h2 {
 .gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Pastikan gambar mengisi seluruh item tanpa terdistorsi */
+  object-fit: cover;
   display: block;
 }
 
