@@ -61,7 +61,8 @@ nav a {
   transition: color 0.3s;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
   color: #005fa3;
 }
 
@@ -74,15 +75,16 @@ main {
 
 /* Section Styling */
 section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem;
+  padding: 100px 3rem 60px; /* ruang atas-bawah lebih besar */
   border-bottom: 2px solid #eaeaea;
   scroll-snap-align: start;
   text-align: center;
+  scroll-margin-top: 80px; /* biar judul tidak kepotong */
 }
 
 /* Background berbeda tiap section */
@@ -95,15 +97,15 @@ section {
 }
 
 #proyek {
-  background: #9a9af1; /* pink muda */
+  background: #c4c4f0; /* pink muda */
 }
 
 #kenangan {
-  background: #d1edb0; /* hijau muda */
+  background: #fcf7f0; /* krem muda */
 }
 
 #kontak {
-  background: #ff859b; /* ungu muda */
+  background: #ecc9cf; /* merah muda */
 }
 
 section h2 {
@@ -115,7 +117,8 @@ section h2 {
 }
 
 /* Pengalaman & Sekolah */
-.pengalaman-item, .sekolah-item {
+.pengalaman-item,
+.sekolah-item {
   margin-bottom: 1.5rem;
 }
 
@@ -189,7 +192,14 @@ section h2 {
 }
 
 .social-media a .fa-instagram {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
