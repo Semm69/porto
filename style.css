@@ -1,13 +1,17 @@
-/* Reset default browser style */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Styling body */
+/* =========================
+   BODY
+========================= */
 body {
-  background-color: #ffffff; /* putih */
+  background-color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   color: #333;
   line-height: 1.8;
@@ -17,14 +21,15 @@ body {
   height: 100%;
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
 header {
   text-align: center;
   padding: 2rem;
   background: #f8f8f8;
   border-bottom: 2px solid #eaeaea;
 }
-
 header .profile-img {
   width: 150px;
   height: 150px;
@@ -33,19 +38,19 @@ header .profile-img {
   margin-bottom: 3rem;
   border: 3px solid #ddd;
 }
-
 header h1 {
   margin-bottom: 0.5rem;
   font-size: 2rem;
   color: #222;
 }
-
 header p {
   color: #555;
   font-style: italic;
 }
 
-/* Navigation */
+/* =========================
+   NAVBAR
+========================= */
 nav ul {
   list-style: none;
   display: flex;
@@ -53,61 +58,33 @@ nav ul {
   gap: 1.5rem;
   margin-top: 1rem;
 }
-
 nav a {
   text-decoration: none;
   color: #0077cc;
   font-weight: bold;
   transition: color 0.3s;
 }
-
-nav a:hover,
-nav a.active {
+nav a:hover {
   color: #005fa3;
 }
-
-/* Main Content */
-main {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0;
+nav a.active {
+  color: #ff5722;
 }
 
-/* Section Styling */
+/* =========================
+   MAIN SECTIONS
+========================= */
 section {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 100px 3rem 60px; /* ruang atas-bawah lebih besar */
+  padding: 3rem;
   border-bottom: 2px solid #eaeaea;
   scroll-snap-align: start;
   text-align: center;
-  scroll-margin-top: 80px; /* biar judul tidak kepotong */
 }
-
-/* Background berbeda tiap section */
-#tentang {
-  background: #e3f2fd; /* biru muda */
-}
-
-#pengalaman {
-  background: #e8cea6; /* oranye muda */
-}
-
-#proyek {
-  background: #c4c4f0; /* pink muda */
-}
-
-#kenangan {
-  background: #fcf7f0; /* krem muda */
-}
-
-#kontak {
-  background: #ecc9cf; /* merah muda */
-}
-
 section h2 {
   margin-bottom: 1rem;
   font-size: 2rem;
@@ -116,20 +93,72 @@ section h2 {
   padding-bottom: 0.5rem;
 }
 
-/* Pengalaman & Sekolah */
-.pengalaman-item,
-.sekolah-item {
-  margin-bottom: 1.5rem;
+/* Background tiap section */
+#tentang { background: #e3f2fd; }
+#pengalaman { background: #e8cea6; }
+#proyek { background: #c4c4f7; }
+#kenangan { background: #fcf7f0; }
+#kontak { background: #ff859b; }
+
+/* =========================
+   READ MORE BUTTON
+========================= */
+#tentang .more-text {
+  display: none;
+}
+#tentang .read-more-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: 2px solid #007BFF;
+  border-radius: 25px;
+  background: #fff;
+  color: #007BFF;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+#tentang .read-more-btn:hover {
+  background: #007BFF;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
 }
 
-/* Proyek */
+/* =========================
+   PENGALAMAN (foto + teks)
+========================= */
+
+
+.pengalaman-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px; /* kotak dengan sudut rounded */
+  border: 4px solid #fff; /* border putih */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.pengalaman-item img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  filter: brightness(1.05);
+}
+
+
+
+/* =========================
+   PROYEK
+========================= */
 .proyek-container {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .proyek-item {
   background: #fafafa;
   border: 1px solid #ddd;
@@ -140,71 +169,18 @@ section h2 {
   transition: transform 0.3s;
   max-width: 300px;
 }
-
 .proyek-item:hover {
   transform: translateY(-5px);
 }
-
 .proyek-item img {
   max-width: 100%;
   border-radius: 6px;
   margin-bottom: 0.5rem;
 }
 
-.proyek-item a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #0077cc;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.proyek-item a:hover {
-  text-decoration: underline;
-}
-
-/* Kontak */
-#kontak p {
-  margin-bottom: 0.5rem;
-}
-
-.social-media a {
-  font-size: 1.8rem;
-  margin-right: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.social-media a:hover {
-  transform: scale(1.2);
-}
-
-/* Warna ikon social media */
-.social-media a .fa-github {
-  color: #333;
-}
-
-.social-media a .fa-linkedin {
-  color: #0e76a8;
-}
-
-.social-media a .fa-twitter {
-  color: #1da1f2;
-}
-
-.social-media a .fa-instagram {
-  background: linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Styling untuk Bagian Kenangan */
+/* =========================
+   GALERI KENANGAN
+========================= */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -214,19 +190,16 @@ section h2 {
   max-width: 1100px;
   margin: 0 auto;
 }
-
 .gallery-item {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
   height: 250px;
 }
-
 .gallery-item:hover {
   transform: translateY(-5px);
 }
-
 .gallery-item img {
   width: 100%;
   height: 100%;
@@ -234,11 +207,93 @@ section h2 {
   display: block;
 }
 
-/* Footer */
+/* =========================
+   POPUP GALERI
+========================= */
+#popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+#popup-img {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+#caption {
+  margin: 15px auto;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  max-width: 700px;
+}
+.close {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.close:hover {
+  color: #ff5722;
+}
+
+/* =========================
+   ANIMASI FADE-IN
+========================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   FOOTER
+========================= */
 footer {
   text-align: center;
   padding: 1.5rem;
   background: #f8f8f8;
   border-top: 2px solid #eaeaea;
   color: #555;
+}
+
+/* =========================
+   SOSIAL MEDIA ICON
+========================= */
+.social-media {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-media a {
+  font-size: 2rem; /* ukuran ikon */
+  color: #222;
+  padding: 10px; /* area klik lebih besar */
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #fff;
+  background: #007BFF;
+  transform: scale(1.2);
 }
