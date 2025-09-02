@@ -1,4 +1,6 @@
+// ==========================
 // Smooth scrolling untuk navigasi anchor
+// ==========================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', event => {
         const targetId = anchor.getAttribute('href');
@@ -14,7 +16,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// ==========================
 // Highlight menu saat scroll
+// ==========================
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('main section');
     const scrollPos = window.scrollY + 150; // offset biar pas
@@ -54,13 +58,40 @@ document.querySelectorAll(".gallery img").forEach(img => {
 });
 
 // Tutup popup saat klik tombol X
-closeBtn.addEventListener("click", () => {
-    popup.style.display = "none";
-});
+if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+}
 
 // Tutup popup saat klik area luar gambar
 window.addEventListener("click", (e) => {
     if (e.target === popup) {
         popup.style.display = "none";
     }
+});
+
+// ==========================
+// Efek Fade-in gambar saat scroll
+// ==========================
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+    threshold: 0.2, // muncul saat 20% gambar terlihat
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add("show"); // gunakan .show (sesuai CSS)
+            observer.unobserve(entry.target);
+        }
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
 });
