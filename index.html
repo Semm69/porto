@@ -7,6 +7,20 @@
   <link rel="stylesheet" href="style.css">
   <!-- Font Awesome untuk ikon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Tambahan untuk baca selengkapnya */
+    #tentang .more-text {
+      display: none;
+    }
+    #tentang .read-more-btn {
+      display: inline-block;
+      margin-top: 10px;
+      color: #007BFF;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
@@ -32,19 +46,32 @@
     <!-- Tentang -->
     <section id="tentang">
       <h2>Tentang Saya</h2>
-      <p>Halo, saya seorang developer yang suka membuat website modern dan responsif.</p>
+      <p>
+        Halo, saya Semmy biasa dipanggil Semmy, Dudung, Sem saya bersekolah di SMK Gracia Bandung saya sekarang menduduki kelas XI Jurusan Rekayasa Perangkat Lunak, saya berumur 16 saya lahir di kota Bandung pada 1 Juli 2009 dan saya mempunyai kakak laki-laki,
+        <span class="dots">...</span>
+        <span class="more-text">
+          saya mempunyai cita-cita yaitu menjadi orang yang bermanfaat untuk banyak orang dan tidak menjadi beban orang lain, saya mempunyai hobi sepak bola, berenang, dan tidur dan saya orangnya suka bercanda. Makanan kesukaan saya adalah ayam goreng pakai sambel behh mantap, binatang kesukaan saya adalah ikan dan saya tidak suka kucing yang menurut rata-rata orang lucu tetapi tidak dengan saya serta saya tidak suka binatang semua binatang kecuali ikan.
+        </span>
+      </p>
+      <span class="read-more-btn">Baca Selengkapnya</span>
     </section>
 
     <!-- Pengalaman -->
     <section id="pengalaman">
       <h2>Pengalaman</h2>
       <div class="pengalaman-item">
-        <h3>Magang di Perusahaan A</h3>
-        <p>Mengerjakan project frontend menggunakan React.</p>
+        <img src="Semmy pengalaman.jpg" alt="Akademi Persib">
+        <div>
+          <h3>Akademi Persib</h3>
+          <p>2023-2025</p>
+        </div>
       </div>
       <div class="pengalaman-item">
-        <h3>Freelance Web Developer</h3>
-        <p>Membuat website untuk UMKM lokal.</p>
+        <img src="#" alt="Freelance Web Developer">
+        <div>
+          <h3>Freelance Web Developer</h3>
+          <p>Membuat website untuk UMKM lokal.</p>
+        </div>
       </div>
     </section>
 
@@ -52,12 +79,20 @@
     <section id="sekolah">
       <h2>Riwayat Sekolah</h2>
       <div class="sekolah-item">
-        <h3>Universitas X</h3>
-        <p>Jurusan Informatika (2022 - Sekarang)</p>
+        <h3>TK</h3>
+        <p>TKK AL-QUR-AN RIYADHUL JANNAH (2013 - 2015)</p>
       </div>
       <div class="sekolah-item">
-        <h3>SMA Y</h3>
-        <p>Jurusan IPA (2019 - 2022)</p>
+        <h3>SD</h3>
+        <p>SD Gracia Bandung (2015 - 2021)</p>
+      </div>
+      <div class="sekolah-item">
+        <h3>SMP</h3>
+        <p>SMP Gracia Bandung (2021 - 2024)</p>
+      </div>
+      <div class="sekolah-item">
+        <h3>SMK</h3>
+        <p>SMK Gracia Bandung (2024 - Sekarang)</p>
       </div>
     </section>
 
@@ -76,6 +111,12 @@
         </div>
         <div class="gallery-item">
           <img src="Semmy kenangan 4.jpg" alt="Kenangan 4">
+        </div>
+        <div class="gallery-item">
+          <img src="Semmy kenangan 6.jpg" alt="Kenangan 4">
+        </div>
+        <div class="gallery-item">
+          <img src="Semmy kenangan 7.jpg" alt="Kenangan 4">
         </div>
       </div>
     </section>
@@ -100,12 +141,12 @@
     <!-- Kontak -->
     <section id="kontak">
       <h2>Kontak</h2>
-      <p>Email: email@example.com</p>
-      <p>Telp: +62 812 3456 7890</p>
+      <p>Email: semmywijaya23@gmail.com</p>
+      <p>Telp: +62 881 0227 45348</p>
       <div class="social-media">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/Semm69/porto.git"><i class="fab fa-github"></i></a>
+        <a href="https://youtube.com/@axostudio_1?si=-EBrCafD1vDWubM3"><i class="fab fa-youtube"></i></a>
+        <a href="https://discord.gg/DTnefKR4Ge"><i class="fab fa-discord"></i></a>
         <a href="https://www.instagram.com/semmywijaya/"><i class="fab fa-instagram"></i></a>
       </div>
     </section>
@@ -125,5 +166,23 @@
 
   <!-- Script -->
   <script src="script.js"></script>
+  <script>
+    // Script Baca Selengkapnya
+    const readMoreBtn = document.querySelector(".read-more-btn");
+    const moreText = document.querySelector("#tentang .more-text");
+    const dots = document.querySelector("#tentang .dots");
+
+    readMoreBtn.addEventListener("click", () => {
+      if (moreText.style.display === "inline") {
+        moreText.style.display = "none";
+        dots.style.display = "inline";
+        readMoreBtn.textContent = "Baca Selengkapnya";
+      } else {
+        moreText.style.display = "inline";
+        dots.style.display = "none";
+        readMoreBtn.textContent = "Tutup";
+      }
+    });
+  </script>
 </body>
 </html>
