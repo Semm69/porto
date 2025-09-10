@@ -4,29 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio Saya</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome untuk ikon -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    /* Tambahan untuk baca selengkapnya */
-    #tentang .more-text {
-      display: none;
-    }
-    #tentang .read-more-btn {
-      display: inline-block;
-      margin-top: 10px;
-      color: #007BFF;
-      cursor: pointer;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-  </style>
+  <!-- Link ke CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Header -->
   <header>
-    <img src="foto semmy 1.jpg" alt="Foto Profil" class="profile-img">
+    <img src="fotosemmy 1.jpg" alt="Foto Profil" class="profile-img">
     <h1>Semmy Wijaya</h1>
     <p>Pemimpin yang hebat bukan diukur dari seberapa banyak yang mengikuti, tapi dari seberapa banyak yang terinspirasi</p>
     <nav>
@@ -60,7 +47,7 @@
     <section id="pengalaman">
       <h2>Pengalaman</h2>
       <div class="pengalaman-item">
-        <img src="Semmy pengalaman.jpg" alt="Akademi Persib">
+        <img src="Semmypengalaman.jpg" alt="Akademi Persib">
         <div>
           <h3>Akademi Persib</h3>
           <p>2023-2025</p>
@@ -96,28 +83,16 @@
       </div>
     </section>
 
-    <!-- Kenangan (Galeri) -->
+    <!-- Kenangan -->
     <section id="kenangan">
       <h2>Kenangan</h2>
       <div class="gallery">
-        <div class="gallery-item">
-          <img src="Semmy kenangan 2.jpg" alt="Kenangan 1">
-        </div>
-        <div class="gallery-item">
-          <img src="Semmy kenangan.jpg" alt="Kenangan 2">
-        </div>
-        <div class="gallery-item">
-          <img src="Semmy kenangan 3.jpg" alt="Kenangan 3">
-        </div>
-        <div class="gallery-item">
-          <img src="Semmy kenangan 4.jpg" alt="Kenangan 4">
-        </div>
-        <div class="gallery-item">
-          <img src="Semmy kenangan 6.jpg" alt="Kenangan 4">
-        </div>
-        <div class="gallery-item">
-          <img src="Semmy kenangan 7.jpg" alt="Kenangan 4">
-        </div>
+        <div class="gallery-item"><img src="Semmykenangan 2.jpg" alt="Kenangan 1"></div>
+        <div class="gallery-item"><img src="Semmykenangan.jpg" alt="Kenangan 2"></div>
+        <div class="gallery-item"><img src="Semmykenangan 3.jpg" alt="Kenangan 3"></div>
+        <div class="gallery-item"><img src="Semmykenangan 4.jpg" alt="Kenangan 4"></div>
+        <div class="gallery-item"><img src="Semmykenangan .jpg" alt="Kenangan 5"></div>
+        <div class="gallery-item"><img src="Semmykenangan 7.jpg" alt="Kenangan 6"></div>
       </div>
     </section>
 
@@ -126,14 +101,21 @@
       <h2>Proyek</h2>
       <div class="proyek-container">
         <div class="proyek-item">
-          <img src="proyek1.jpg" alt="Proyek 1">
+          <img src="UMKM.mp4" alt="Proyek 1">
           <h3>Website Toko Online</h3>
           <a href="#">Lihat Detail</a>
         </div>
         <div class="proyek-item">
-          <img src="proyek2.jpg" alt="Proyek 2">
+          <img src="UMKM.mp4" alt="Proyek 2">
           <h3>Aplikasi Mobile</h3>
           <a href="#">Lihat Detail</a>
+        </div>
+        <div class="proyek-item">
+          <h3>Video Presentasi Proyek</h3>
+          <iframe src="UMKM Naik Kelas — Kewirausahaan - Brave 2025-09-05 20-17-54.mp4"
+            title="Video Proyek" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
         </div>
       </div>
     </section>
@@ -157,32 +139,7 @@
     <p>&copy; 2025 Portofolio Saya. Semua Hak Dilindungi.</p>
   </footer>
 
-  <!-- Popup Modal -->
-  <div class="popup" id="popup">
-    <span class="close">&times;</span>
-    <img class="popup-content" id="popup-img" alt="">
-    <div id="caption"></div>
-  </div>
-
-  <!-- Script -->
+  <!-- Link ke JavaScript -->
   <script src="script.js"></script>
-  <script>
-    // Script Baca Selengkapnya
-    const readMoreBtn = document.querySelector(".read-more-btn");
-    const moreText = document.querySelector("#tentang .more-text");
-    const dots = document.querySelector("#tentang .dots");
-
-    readMoreBtn.addEventListener("click", () => {
-      if (moreText.style.display === "inline") {
-        moreText.style.display = "none";
-        dots.style.display = "inline";
-        readMoreBtn.textContent = "Baca Selengkapnya";
-      } else {
-        moreText.style.display = "inline";
-        dots.style.display = "none";
-        readMoreBtn.textContent = "Tutup";
-      }
-    });
-  </script>
 </body>
 </html>
